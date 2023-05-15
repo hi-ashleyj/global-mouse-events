@@ -1,6 +1,7 @@
 # global-mouse-events
 
-Global mouse events listener for Node.js (Windows only). Based off of [sentialx/mouse-hooks](https://github.com/sentialx/mouse-hooks) and [coldKey1/mouse-hooks](https://github.com/coldKey1/mouse-hooks).
+Global mouse events listener for Node.js (Windows only). Based off of [xanderfrangos/global-mouse-events](https://github.com/xanderfrangos/global-mouse-events).
+Adds the recommendation from [](https://github.com/xanderfrangos/global-mouse-events/issues/4) for mouse side buttons.
 
 ## Installation
 
@@ -17,7 +18,7 @@ Import the module and register for the mouse events you'd like to listen to.
 Returns:
 - **x:** The X position of the mouse, relative to the top left of the primary display.
 - **y:** The Y position of the mouse, relative to the top left of the primary display.
-- **button:** Which button was pressed. 1 is left-click. 2 is right-click. 3 is middle-click.
+- **button:** Which button was pressed. 1 is left-click. 2 is right-click. 3 is middle-click. 4 is side button back. 5 is side button forward.
 
 **`mousemove`** — *Fires when the mouse cursor is moved.*\
 Returns:
