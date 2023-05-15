@@ -46,9 +46,9 @@ void onMainThread(Napi::Env env, Napi::Function function, MouseEventContext *pMo
             // Is not mouse movement
 
             // Determine event type
-            if (wParam == WM_LBUTTONUP || wParam == WM_RBUTTONUP || wParam == WM_MBUTTONUP) {
+            if (wParam == WM_LBUTTONUP || wParam == WM_RBUTTONUP || wParam == WM_MBUTTONUP || wParam == WM_XBUTTONUP) {
                 name = "mouseup";
-            } else if (wParam == WM_LBUTTONDOWN || wParam == WM_RBUTTONDOWN || wParam == WM_MBUTTONDOWN) {
+            } else if (wParam == WM_LBUTTONDOWN || wParam == WM_RBUTTONDOWN || wParam == WM_MBUTTONDOWN || wParam == WM_XBUTTONDOWN) {
                 name = "mousedown";
             } else if (wParam == WM_MOUSEWHEEL || wParam == WM_MOUSEHWHEEL) {
                 name = "mousewheel";
@@ -61,6 +61,10 @@ void onMainThread(Napi::Env env, Napi::Function function, MouseEventContext *pMo
                 button = 2;
             } else if (wParam == WM_MBUTTONUP || wParam == WM_MBUTTONDOWN) {
                 button = 3;
+            } else if (GET_XBUTTON_WPARAM(nMouseData) == XBUTTON1) {
+                button = 4;
+            } else if (GET_XBUTTON_WPARAM(nMouseData) == XBUTTON2) {
+                button = 5;
             } else if (wParam == WM_MOUSEWHEEL) {
                 button = 0;
             } else if (wParam == WM_MOUSEHWHEEL) {
